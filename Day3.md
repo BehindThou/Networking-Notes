@@ -13,3 +13,7 @@ Capture packets looking for syn (Client attempting to connect): tcp[13] = 2
 Capture packets looking for syn ack {Server responding to client): tcp[13] = 18
 Capture packets looking for response packets from a server with closed tcp ports (RST): tcp[13] = 18
 Capture TCP and UDP packets between well known ports: tcp[2:2] <= 1023 || udp[2:2] <= 1023
+Capture all http traffic: tcp[2:2] = 80 || tcp[0:2] = 80
+Capture all telnet traffic: tcp[2:2] = 23 || tcp[0:2] = 23
+Capture all ARP packets: ether[12:2] = 0x806
+Capture an attacker moving from vlan1 to vlan10 (Double VLAN tagging): ether[12:4] &  0xFFFF0FFF = 0x81000001 &&  ether[16:4] & 0xFFFF0FFF = 0x8100000a
