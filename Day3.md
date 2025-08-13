@@ -17,3 +17,6 @@ Capture all http traffic: tcp[2:2] = 80 || tcp[0:2] = 80
 Capture all telnet traffic: tcp[2:2] = 23 || tcp[0:2] = 23
 Capture all ARP packets: ether[12:2] = 0x806
 Capture an attacker moving from vlan1 to vlan10 (Double VLAN tagging): ether[12:4] &  0xFFFF0FFF = 0x81000001 &&  ether[16:4] & 0xFFFF0FFF = 0x8100000a
+Capture packets where urg isn't set, but urg pointer has a value: tcp[13] & 32 = 0 && tcp[18:2] > 0
+Capture tcp null scan to IP:10.10.10.10: tcp[13] = 0 && ip[16:4] = 0x0a0a0a0a
+To filter on what is chaos protocol: ip[9] = 16
