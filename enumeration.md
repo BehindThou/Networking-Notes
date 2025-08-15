@@ -92,3 +92,18 @@ nc 172.16.82.106 22
 nc -u 172.16.82.106 53
 (-u = UDP)
 ```
+DEV TCP Banner Grab
+```bash
+exec 3<>/dev/tcp/172.16.82.106/22; echo -e "" >&3; cat <&3
+```
+DEV TCP Scanning
+```bash
+for p in {1..1023}; do(echo >/dev/tcp/172.16.82.106/$p) >/dev/null 2>&1 && echo "$p open"; done
+```
+ARP Scanning
+```bash
+arp-scan --interface=eth0 --localnet
+or
+nmap -sP -PR 172.16.82.96/27
+```
+
