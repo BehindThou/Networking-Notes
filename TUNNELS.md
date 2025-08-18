@@ -13,6 +13,7 @@ ssh-keygen -f "/home/student/.ssh/known_hosts" -R "172.16.82.106"
 
 -NT - Do not execute a remote command and disable pseudo-tty (will hang window)
 ```
+###Local Port Forwarding
 ```bash
 Local Port Forwarding
 ssh -p <optional alt port> <user>@<server ip> -L <local bind port>:<tgt ip>:<tgt port>
