@@ -28,6 +28,7 @@ Internet_Host:
 ssh student@localhost -p 1122
 Blue_DMZ_Host-1~$
 ```
+### DYNAMIC PORT FORWARDING
 ```bash
 Dynamic Port Forwarding
 ssh <user>@<server ip> -p <alt port> -D <port> 2>/dev/null
