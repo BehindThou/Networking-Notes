@@ -3,7 +3,8 @@ If ssh is messed up saying remote host identification has changed, use:
 ```bash
 ssh-keygen -f "/home/student/.ssh/known_hosts" -R "172.16.82.106"
 ```
-```bash
+### -L means im opening the port on me. -R means the other port is opening on the remote.
+```bah
 -L - Creates a port on the client mapped to a ip:port via the server
 
 -D - Creates a port on the client and sets up a SOCKS4 proxy tunnel where the target ip:port is specified dynamically
