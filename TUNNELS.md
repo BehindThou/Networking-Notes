@@ -57,3 +57,9 @@ IH/: telnet BH1
 BH1/: ssh student@IH -R 21199:127.0.0.1:22 -NT
 IH:/ ssh student@LH -P 21199
 ```
+### BRINGING IT HOME FOR A REMOTE (WE NEED TO CONNECT OUR LEFT AND RIGHT)
+```bash
+IH: telnet BH2
+BH2: ssh student@BH1 -R 21199:LH:22 -NT
+IH: ssh student@BH1 -L 21101:LH:2119
+```
