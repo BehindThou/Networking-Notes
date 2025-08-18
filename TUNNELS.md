@@ -11,7 +11,8 @@ ssh-keygen -f "/home/student/.ssh/known_hosts" -R "172.16.82.106"
 -R - Creates the port on the server mapped to a ip:port via the client
 
 -NT - Do not execute a remote command and disable pseudo-tty (will hang window)
-
+```
+```bash
 Local Port Forwarding
 ssh -p <optional alt port> <user>@<server ip> -L <local bind port>:<tgt ip>:<tgt port>
 
@@ -26,6 +27,8 @@ ssh -L 1122:localhost:22 student@172.16.1.15
 Internet_Host:
 ssh student@localhost -p 1122
 Blue_DMZ_Host-1~$
+```
+```bash
 Dynamic Port Forwarding
 ssh <user>@<server ip> -p <alt port> -D <port> 2>/dev/null
 or
@@ -36,7 +39,6 @@ Creates a dynamic socks4 proxy that interacts alone, or with a previously establ
 
 Allows the use of scripts and other userspace programs through the tunnel.
 ```
--L = Local
 ```bash
 ssh <user>@<server ip> -p <alt port> -D <port> 2>/dev/null
 or
