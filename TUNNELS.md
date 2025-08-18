@@ -55,4 +55,5 @@ ssh student@172.16.1.15 -D 9050 2>/dev/null
 ```bash
 IH/: telnet BH1
 BH1/: ssh student@IH -R 21199:127.0.0.1:22 -NT
-IH:/ ssh student@BH1 -P 21199
+IH:/ ssh student@LH -P 21199
+```
