@@ -112,4 +112,8 @@ arp-scan --interface=eth0 --localnet
 or
 nmap -sP -PR 172.16.82.96/27
 ```
-
+### view name server records of a domain
+#ex dtic.mil
+```bash
+nslookup -type=NS dtic.mil
+```
