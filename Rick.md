@@ -1,5 +1,8 @@
 ### Idek anymore man.
 ```bash
+IH$ nmap -sT -T4 10.50.87.199 -p 21-23,80
+#Ports 23,80 seen open.
+wget -r http://10.50.87.199
 IH$ telnet 10.50.87.199
 Rick$ ssh student@10.50.247.170 (THIS IS MY FLOAT IP) -R 1111:127.0.0.1:22
 IH$ ssh Rick@127.0.0.1 -p 1111
