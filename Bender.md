@@ -1,0 +1,14 @@
+### Im starting to know man
+```bash
+#We know Bender is running ssh on a rhp. We did this:
+ nc 10.50.223.74 1234
+#This told us 1234 is running ssh. We will now create our tunnel
+ssh Bender@10.50.223.74 -p 1234 (This is because we must specify since ssh is running on 1234) -L 21301:127.0.0.1:22
+#Now we must create a DYNAMIC tunnel to scan the net 172.17.17/28 that we discovered)
+ssh Bender@10.50.223.74 -p 1234 -D 9050 -NT (We must always create dynamic Tunnels to the server ip, and specify -p with the port being used from earlier)
+#We have completed scans, acquired info, and discovered Phillip is the 172.17.17.28. OUR FACING IP IS 172.17.17.17 We have also discovered ssh is closed to outsiders. TELNET IS OPEN*
+#We will use PROXYCHAINS AND OUR DYNAMIC TUNNEL to telnet into Philip
+#Do recon, we have discovered the 192.168.30.130/26.
+#We also discovered the 4321 port, but since we are in telnet, we cannot nc it normally. instead, we can cat /etc/ssh/sshd_config
+#wE WILL NOW CREATE OUR REVERSE TUNNEL TO BENDER
+ssh Bender@172.17.17.17 -p 1234 -R 21399:127.0.0.1:4321 -NT (-p 1234 is ssh running on Bender, 4321 is the ssh we discovered Philip)
