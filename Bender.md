@@ -12,3 +12,16 @@ ssh Bender@10.50.223.74 -p 1234 -D 9050 -NT (We must always create dynamic Tunne
 #We also discovered the 4321 port, but since we are in telnet, we cannot nc it normally. instead, we can cat /etc/ssh/sshd_config
 #wE WILL NOW CREATE OUR REVERSE TUNNEL TO BENDER
 ssh Bender@172.17.17.17 -p 1234 -R 21399:127.0.0.1:4321 -NT (-p 1234 is ssh running on Bender, 4321 is the ssh we discovered Philip)
+
+IH$ ssh Bender@10.50.223.74 -p 1234
+IH$ ssh Bender@10.50.223.74 -p 1234 -D 9050 -NT
+Bender$ telnet 172.17.17.28
+IH$ ssh Bender@10.50.223.74 -p 1234 -L 1111:172.17.17.28:23
+IH$ telnet localhost 1111
+philip$ ssh Bender@172.17.17.17 -p 1234 -R 21399:127.0.0.1:4321 -NT
+IH$ ssh Bender@10.50.223.74 -p 1234 -L 21302:127.0.0.1:21399 -NT
+IH$ ssh Philip@127.0.0.1 -p 21399 -D 9050 -NT
+IH$ ssh Philip@127.0.0.1 -p 21302 -L 21303:192.168.30.150:1212
+IH$ ssh Philip@127.0.0.1 -p 21303 -L 21304:10.10.12.121:2932
+IH$ ssh proffesor@127.0.0.1 -p 21304 -D 9050 -nt
+IH$ proxychains nc 127.0.0.1 23456
