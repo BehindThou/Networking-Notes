@@ -21,4 +21,5 @@ ssh Kyle@127.0.0.1 -p 21303 -L 21304:127.20.21.5:23 -NT
 IH$ telnet 127.0.0.1 21304
 #Create our reverse tunnel
 Stan$ ssh Kyle@172.20.21.4 -p 6481 -R 21398:127.0.0.1:22 -NT (.4 is what stan sees kyle as, 6481 is kyles ssh.)
-
+IH$ ssh Kyel@127.0.0.1 -p 21393 -L 21305:127.0.0.1:23 -NT
+ssh Kyl@127.0.0.1 -p 21303
