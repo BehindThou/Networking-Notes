@@ -5,8 +5,7 @@
 IH$ telnet 10.50.151.62
 #ip a reveals 192.168.100.33/27. cat /etc/ssh/sshd_config reveals 8462 is ssh. 
 Eric$ ssh student@10.50.247.170 -R 21399:127.0.0.1:8462 -NT
-#We need to bring it back with a local since ssh is disabled ssh Eric@127.0.0.1 -p 21300 -D 9050 -NT
-IH$ ssh Eric@127.0.0.1 -p 21399 -L 21301:10.50.151.62:8462 -NT 
+IH$ ssh Eric@127.0.0.1 -p 21300 -D 9050 -NT
 ssh Eric@127.0.0.1 -p 21399 -D 9050 -NT
 #We are the .33. We are looking at Kenny, the 192.168.100.60
 #Create the next tunnel
