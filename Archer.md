@@ -6,8 +6,8 @@ Lana$ ssh Sterling@10.1.2.130 -R 21399:127.0.0.1:8976 -NT
 IH$ ssh Sterling@127.0.0.1 -p 21301 -L 21303:127.0.0.1:21399
 IH$ ssh Lana@127.0.0.1 -p 21303 -D 9050 -NT
 $IH ip a
-
-
+### JINKY MINUS 
+```bash
 IH$ ssh sterling@10.50.93.47 -L 1111:10.1.2.200:23
 IH$ telnet localhost 1111
 Lana$ ssh Sterling@10.1.2.130 -R 2222:Localhost:8976
