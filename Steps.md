@@ -1,4 +1,4 @@
-# Tunneling. Lets just hope that we figure this out soon
+# Tunneling (Local, Reverse, Dynamic, and SCP Command)
 
 What tunnel should i make on the situation?
 
