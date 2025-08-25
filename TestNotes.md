@@ -15,3 +15,19 @@ IH$ ssh net1_student13@10.50.158.236 -p 7777 -L 11302:127.0.0.1:11399 -NT
 IH$ ssh net1_comrade13@127.0.0.1 -p 11302 -D 9050 -NT
 ```
 ### THAT IS IT FOR A REVERSE TUNNEL IDIOT ^^^
+###Capture SMTP Email
+```bash
+tcpdump -nn -l port 25 | grep -i 'MAIL FROM\|RCPT TO'
+```
+### Extract HTTP Passwords in POST Requests
+bash```
+tcpdump -s 0 -A -n -l | egrep -i "POST /|pwd=|passwd=|password=|Host:"
+```
+### Capture FTP Credentials and Commands
+bash```
+tcpdump -nn -v port ftp or ftp-data
+```
+### Capture all plaintext passwords
+```bash
+tcpdump port http or port ftp or port smtp or port imap or port pop3 or port telnet -l -A | egrep -i -B5 'pass=|pwd=|log=|login=|user=|username=|pw=|pas
+```
