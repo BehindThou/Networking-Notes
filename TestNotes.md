@@ -1,3 +1,8 @@
+
+### CAPTURE RIPV@ ADVERTISEMENTS
+```bash
+tcpdump -i eth0 port 520 -vn
+```
 ### CHANGE TTL
 ```bash
 sudo sysctl -w net.ipv4.ip_default_ttl=NEW_TTL_VALUE
