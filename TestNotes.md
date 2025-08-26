@@ -1,3 +1,7 @@
+### Change hex encrypted pcap to viewable pcap with xxd
+```bash
+xxd -r capstoneIam_HEX_ENCODED.pcap > glubnub.pcap
+```
 ### Sneaky admin moved snort alerts.
 ```bash
 ps -ef | grep snort
