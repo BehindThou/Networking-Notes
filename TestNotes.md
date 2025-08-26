@@ -1,4 +1,8 @@
-
+### Sneaky admin moved snort alerts.
+```bash
+ps -ef | grep snort
+#Discovered /var/log/capstone through here.
+```
 ### CAPTURE RIPV2 IP ADVERTISEMENTS
 ```bash
 tcpdump -i eth0 port 520 -vn
