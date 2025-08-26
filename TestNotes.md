@@ -36,3 +36,30 @@ tcpdump -nn -v port ftp or ftp-data
 ```bash
 tcpdump port http or port ftp or port smtp or port imap or port pop3 or port telnet -l -A | egrep -i -B5 'pass=|pwd=|log=|login=|user=|username=|pw=|pas
 ```
+Tables of iptables¶
+filter - default table. Used to ACCEPT, DROP or REJECT packets that match. Provides packet filtering.
+
+INPUT: packets going to the local machine
+FORWARD: packets routed through the server
+OUTPUT: locally generated packets
+nat - used to translate private ↔ public address and ports.
+
+PREROUTING: designating packets when they come in
+POSTROUTING: locally generated packets before routing takes place
+OUTPUT: altering packets on the way out
+mangle - provides special packet alteration. Can modify various header fields.
+
+PREROUTING: incoming packets
+POSTROUTING: outgoing packets
+INPUT: packets coming directly into the server
+FORWARD: packets being routed through the server
+OUTPUT: locally generated packets that are being altered
+raw - used to configure exemptions from connection tracking.
+
+PREROUTING: packets that arrive by the network interface
+OUTPUT: processes that are locally generated
+security - used for Mantator Access Control (MAC) networking rules.
+
+INPUT: packets entering the server
+FORWARD: packets passing through the server
+OUTPUT: locally generated packets
