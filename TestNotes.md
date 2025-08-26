@@ -20,7 +20,7 @@ IH$ ssh net1_student13@10.50.158.236 -p 7777 -L 11302:127.0.0.1:11399 -NT
 IH$ ssh net1_comrade13@127.0.0.1 -p 11302 -D 9050 -NT
 ```
 ### THAT IS IT FOR A REVERSE TUNNEL IDIOT ^^^
-###Capture SMTP Email
+### Capture SMTP Email
 ```bash
 tcpdump -nn -l port 25 | grep -i 'MAIL FROM\|RCPT TO'
 ```
