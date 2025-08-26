@@ -1,5 +1,5 @@
 
-### CAPTURE RIPV@ ADVERTISEMENTS
+### CAPTURE RIPV2 IP ADVERTISEMENTS
 ```bash
 tcpdump -i eth0 port 520 -vn
 ```
