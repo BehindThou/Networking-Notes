@@ -1,3 +1,7 @@
+### finding specific hint
+```bash
+find . -name *3c*
+```
 ### Change hex encrypted pcap to viewable pcap with xxd
 ```bash
 xxd -r capstoneIam_HEX_ENCODED.pcap > glubnub.pcap
