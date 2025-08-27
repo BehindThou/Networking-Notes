@@ -41,14 +41,18 @@ bash```
 tcpdump -s 0 -A -n -l | egrep -i "POST /|pwd=|passwd=|password=|Host:"
 ```
 ### Capture FTP Credentials and Commands
-bash```
+```bash
 tcpdump -nn -v port ftp or ftp-data
 ```
 ### Capture all plaintext passwords
 ```bash
 tcpdump port http or port ftp or port smtp or port imap or port pop3 or port telnet -l -A | egrep -i -B5 'pass=|pwd=|log=|login=|user=|username=|pw=|pas
 ```
-Tables of iptables¶
+### Expirimental telnet
+```bash
+tcpdump port http or port ftp or port smtp or port imap or port telnet -l -A | egrep -i 'pass=|pwd=|log=|login=|user=|username=|pw=|passw=|passwd=|password=|pass:|user:|username:|password:|login:|pass |user ' --color=auto --line-buffered -B20
+```
+### Tables of iptables
 filter - default table. Used to ACCEPT, DROP or REJECT packets that match. Provides packet filtering.
 
 INPUT: packets going to the local machine
